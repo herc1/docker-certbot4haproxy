@@ -12,9 +12,9 @@ while true; do
   echo "cron is not running. Starting daemon"
   cron -f &
  fi
- if [ $(pgrep nginx | wc -l) -eq 0 ]
- then
+ #if [ $(pgrep nginx | wc -l) -eq 0 ]
+ #then
   #service nginx start
- fi
+ #fi
  sleep 5 
 done
