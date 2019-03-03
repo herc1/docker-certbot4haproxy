@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source /renew_functions.sh
+
+for site in $(cat /etc/letsencrypt/sites.txt); do
+  renew_single $site
+done

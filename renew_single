@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source /renew_functions.sh
+
+renew_single $1
