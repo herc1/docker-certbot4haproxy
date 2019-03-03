@@ -1,4 +1,4 @@
-FROM nginx:1.15
+FROM debian:stretch-slim
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
