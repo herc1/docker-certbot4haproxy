@@ -12,6 +12,8 @@ RUN apt-get -y install certbot -t stretch-backports
 
 RUN apt-get -y install cron procps
 
+RUN mkdir -p /var/www/html/.well-known/acme-challenge/
+
 RUN mkdir /opt/output
 
 COPY entrypoint.sh /
