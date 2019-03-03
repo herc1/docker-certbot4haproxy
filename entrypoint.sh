@@ -1,9 +1,10 @@
 #!/bin/bash
 
-certbot register --email "${MAIL}" --no-eff-email  --agree-tos
+yes | cp -f /etc/letsencrypt/crontab /etc/crontab 2> /dev/null
 
+certbot register --email "${MAIL}" --no-eff-email  --agree-tos
 cron -f &
-nginx -g daemon off &
+service nginx start
 
 while true; do
  if [ $(pgrep cron | wc -l) -eq 0 ]
@@ -13,7 +14,7 @@ while true; do
  fi
  if [ $(pgrep nginx | wc -l) -eq 0 ]
  then
-  nginx -g daemon off &
+  service nginx start
  fi
  sleep 5 
 done

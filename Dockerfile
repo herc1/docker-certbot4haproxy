@@ -10,6 +10,8 @@ RUN apt-get -y upgrade
 
 RUN apt-get -y install certbot -t stretch-backports
 
+RUN apt-get -y install cron procps
+
 RUN mkdir /opt/output
 
 COPY entrypoint.sh /
