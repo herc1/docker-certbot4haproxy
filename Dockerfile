@@ -18,4 +18,10 @@ COPY crontab /etc/crontab
 
 COPY entrypoint.sh /
 
+COPY renew_functions.sh /
+
+COPY renew_single /
+
+COPY renew_all /
+
 ENTRYPOINT ["/entrypoint.sh"]
